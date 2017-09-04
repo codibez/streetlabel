@@ -39,89 +39,90 @@ Citizen.CreateThread(function()
 				break;
 			end
 		end
+		
 		if(GetStreetNameFromHashKey(var1) and GetNameOfZone(pos.x, pos.y, pos.z))then
 			if(zones[GetNameOfZone(pos.x, pos.y, pos.z)] and tostring(GetStreetNameFromHashKey(var1)))then
 				if direction == 'N' then
-						drawTxt(0.665, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-						drawTxt(0.694, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-					drawTxt(0.685, 1.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
+						drawTxt(x-0.335, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.306, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(0.715, 1.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					else 
-						drawTxt2(0.715, 1.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					end
-					drawTxt2(0.715, 1.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
+						drawTxt2(x-0.285, y+0.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
 				elseif direction == 'NE' then 
-						drawTxt(0.665, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-						drawTxt(0.702, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-					drawTxt(0.685, 1.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
+						drawTxt(x-0.335, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.298, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(0.723, 1.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.277, y+0.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					else 
-						drawTxt2(0.723, 1.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.277, y+0.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					end
-					drawTxt2(0.723, 1.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
+					drawTxt2(x-0.277, y+0.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
 				elseif direction == 'E' then 
-						drawTxt(0.665, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-						drawTxt(0.691, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-					drawTxt(0.685, 1.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
+						drawTxt(x-0.335, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.309, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(0.712, 1.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.288, y+0.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					else 
-						drawTxt2(0.712, 1.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.288, y+0.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					end
-					drawTxt2(0.712, 1.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
+					drawTxt2(x-0.288, y+0.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
 				elseif direction == 'SE' then 
-						drawTxt(0.665, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-						drawTxt(0.702, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-					drawTxt(0.685, 1.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
+						drawTxt(x-0.335, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.298, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(0.725, 1.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.275, x+0.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					else 
-						drawTxt2(0.725, 1.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.275, x+0.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					end
-					drawTxt2(0.725, 1.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
+						drawTxt2(x-0.275, y+0.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
 				elseif direction == 'S' then
-						drawTxt(0.665, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-						drawTxt(0.693, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-					drawTxt(0.685, 1.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
+						drawTxt(x-0.335, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.307, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(0.715, 1.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					else 
-						drawTxt2(0.715, 1.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					end
-					drawTxt2(0.715, 1.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
+						drawTxt2(x-0.285, y+0.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
 				elseif direction == 'SW' then
-						drawTxt(0.665, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-						drawTxt(0.708, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-					drawTxt(0.685, 1.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
+						drawTxt(x-0.335, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.292, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(0.730, 1.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.270, y+0.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					else 
-						drawTxt2(0.730, 1.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.270, y+0.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					end
-					drawTxt2(0.730, 1.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
+						drawTxt2(x-0.270, y+0.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
 				elseif direction == 'W' then 
-						drawTxt(0.665, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.335, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
 						-- right border
-						drawTxt(0.697, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-					drawTxt(0.685, 1.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
+						drawTxt(x-0.303, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then 
-						drawTxt2(0.720, 1.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.280, y+0.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					else
-						drawTxt2(0.720, 1.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.280, y+0.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					end
-					drawTxt2(0.720, 1.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
+						drawTxt2(x-0.280, y+0.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
 				elseif direction == 'NW' then
-						drawTxt(0.665, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-						drawTxt(0.710, 1.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
-					drawTxt(0.685, 1.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
+						drawTxt(x-0.335, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.290, y+0.66, 1.0,1.5,1.4, "~w~ | ~w~", 255, 255, 255, 100)
+						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction , 255, 255, 255, 215)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(0.734, 1.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.266, y+0.45, 1.0,1.0,0.45, "~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					else 
-						drawTxt2(0.734, 1.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
+						drawTxt2(x-0.266, y+0.45, 1.0,1.0,0.45, "~w~" .. tostring(GetStreetNameFromHashKey(var2)) .. "~w~, ~w~" .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], 255, 255, 255, 255)
 					end 
-					drawTxt2(0.734, 1.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
+						drawTxt2(x-0.266, y+0.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)), 255, 255, 255, 255)
 				end
 			end
 		end
