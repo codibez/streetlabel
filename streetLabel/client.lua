@@ -31,6 +31,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(1)
 		local pos = GetEntityCoords(GetPlayerPed(-1))
 		local var1, var2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.ResultAsInteger(), Citizen.ResultAsInteger())
+		local current_zone = zones[GetNameOfZone(pos.x, pos.y, pos.z)]
 
 		for k,v in pairs(directions)do
 			direction = GetEntityHeading(GetPlayerPed())
@@ -47,7 +48,7 @@ Citizen.CreateThread(function()
 						drawTxt(x-0.306, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
 						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction, dir_r, dir_g, dir_b, dir_a)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, zones[GetNameOfZone(pos.x, pos.y, pos.z)], town_r, town_g, town_b, town_a)
+						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
 					else 
 						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, tostring(GetStreetNameFromHashKey(var2)) .. ", " .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], str_around_r, str_around_g, str_around_b, str_around_a)
 					end
@@ -57,7 +58,7 @@ Citizen.CreateThread(function()
 						drawTxt(x-0.298, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
 						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction, dir_r, dir_g, dir_b, dir_a)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(x-0.277, y+0.45, 1.0,1.0,0.45, zones[GetNameOfZone(pos.x, pos.y, pos.z)], town_r, town_g, town_b, town_a)
+						drawTxt2(x-0.277, y+0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
 					else 
 						drawTxt2(x-0.277, y+0.45, 1.0,1.0,0.45, tostring(GetStreetNameFromHashKey(var2)) .. ", " .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], str_around_r, str_around_g, str_around_b, str_around_a)
 					end
@@ -67,7 +68,7 @@ Citizen.CreateThread(function()
 						drawTxt(x-0.309, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
 						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction, dir_r, dir_g, dir_b, dir_a)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(x-0.288, y+0.45, 1.0,1.0,0.45, zones[GetNameOfZone(pos.x, pos.y, pos.z)], town_r, town_g, town_b, town_a)
+						drawTxt2(x-0.288, y+0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
 					else 
 						drawTxt2(x-0.288, y+0.45, 1.0,1.0,0.45, tostring(GetStreetNameFromHashKey(var2)) .. ", " .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], str_around_r, str_around_g, str_around_b, str_around_a)
 					end
@@ -77,7 +78,7 @@ Citizen.CreateThread(function()
 						drawTxt(x-0.298, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
 						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction, dir_r, dir_g, dir_b, dir_a)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(x-0.275, x+0.45, 1.0,1.0,0.45, zones[GetNameOfZone(pos.x, pos.y, pos.z)], town_r, town_g, town_b, town_a)
+						drawTxt2(x-0.275, y+0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
 					else 
 						drawTxt2(x-0.275, x+0.45, 1.0,1.0,0.45, tostring(GetStreetNameFromHashKey(var2)) .. ", " .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], str_around_r, str_around_g, str_around_b, str_around_a)
 					end
@@ -87,7 +88,7 @@ Citizen.CreateThread(function()
 						drawTxt(x-0.307, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
 						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction, dir_r, dir_g, dir_b, dir_a)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, zones[GetNameOfZone(pos.x, pos.y, pos.z)], town_r, town_g, town_b, town_a)
+						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
 					else 
 						drawTxt2(x-0.285, y+0.45, 1.0,1.0,0.45, tostring(GetStreetNameFromHashKey(var2)) .. ", " .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], str_around_r, str_around_g, str_around_b, str_around_a)
 					end
@@ -97,7 +98,7 @@ Citizen.CreateThread(function()
 						drawTxt(x-0.292, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
 						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction, dir_r, dir_g, dir_b, dir_a)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(x-0.270, y+0.45, 1.0,1.0,0.45, zones[GetNameOfZone(pos.x, pos.y, pos.z)], town_r, town_g, town_b, town_a)
+						drawTxt2(x-0.270, y+0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
 					else 
 						drawTxt2(x-0.270, y+0.45, 1.0,1.0,0.45, tostring(GetStreetNameFromHashKey(var2)) .. ", " .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], str_around_r, str_around_g, str_around_b, str_around_a)
 					end
@@ -107,7 +108,7 @@ Citizen.CreateThread(function()
 						drawTxt(x-0.303, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
 						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction, dir_r, dir_g, dir_b, dir_a)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then 
-						drawTxt2(x-0.280, y+0.45, 1.0,1.0,0.45, zones[GetNameOfZone(pos.x, pos.y, pos.z)], town_r, town_g, town_b, town_a)
+						drawTxt2(x-0.280, y+0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
 					else
 						drawTxt2(x-0.280, y+0.45, 1.0,1.0,0.45, tostring(GetStreetNameFromHashKey(var2)) .. ", " .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], str_around_r, str_around_g, str_around_b, str_around_a)
 					end
@@ -117,7 +118,7 @@ Citizen.CreateThread(function()
 						drawTxt(x-0.290, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
 						drawTxt(x-0.315, y+0.42, 1.0,1.0,1.0, direction, dir_r, dir_g, dir_b, dir_a)
 					if tostring(GetStreetNameFromHashKey(var2)) == "" then
-						drawTxt2(x-0.266, y+0.45, 1.0,1.0,0.45, zones[GetNameOfZone(pos.x, pos.y, pos.z)], town_r, town_g, town_b, town_a)
+						drawTxt2(x-0.266, y+0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
 					else 
 						drawTxt2(x-0.266, y+0.45, 1.0,1.0,0.45, tostring(GetStreetNameFromHashKey(var2)) .. ", " .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], str_around_r, str_around_g, str_around_b, str_around_a)
 					end 
