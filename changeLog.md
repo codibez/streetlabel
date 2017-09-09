@@ -1,4 +1,4 @@
-<h1>V 0.0.2 (06-04-2017)</h1>
+<h1>V 0.0.2 (09-09-2017)</h1>
 Added configuration so users can adjust the color of each element to their liking.
 <h3>Changes</h3>
 <ul> 
@@ -6,7 +6,7 @@ Added configuration so users can adjust the color of each element to their likin
   <li>Added color variables to config.lua to allow user to change the color of each element on the HUD to their liking.</li>
 </ul>
 
-<h1>V 0.0.1 (06-04-2017)</h1>
+<h1>V 0.0.1 (09-04-2017)</h1>
 Added configuration so users can adjust the position of the HUD.
 <h3>Changes</h3>
 <ul>
