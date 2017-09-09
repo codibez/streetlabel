@@ -61,7 +61,7 @@ Citizen.CreateThread(function()
 					else 
 						drawTxt2(x-0.277, y+0.45, 1.0,1.0,0.45, tostring(GetStreetNameFromHashKey(var2)) .. ", " .. zones[GetNameOfZone(pos.x, pos.y, pos.z)], str_around_r, str_around_g, str_around_b, str_around_a)
 					end
-					drawTxt2(x-0.277, y+0.42, 1.0,1.0,0.55, "~y~" .. tostring(GetStreetNameFromHashKey(var1)),curr_street_r, curr_street_g, curr_street_b, curr_street_a)
+					drawTxt2(x-0.277, y+0.42, 1.0,1.0,0.55, tostring(GetStreetNameFromHashKey(var1)),curr_street_r, curr_street_g, curr_street_b, curr_street_a)
 				elseif direction == 'E' then 
 						drawTxt(x-0.335, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
 						drawTxt(x-0.309, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
