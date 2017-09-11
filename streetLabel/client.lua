@@ -34,7 +34,7 @@ Citizen.CreateThread(function()
 		local current_zone = zones[GetNameOfZone(pos.x, pos.y, pos.z)]
 
 		for k,v in pairs(directions)do
-			direction = GetEntityHeading(GetPlayerPed())
+			direction = GetEntityHeading(GetPlayerPed(-1))
 			if(math.abs(direction - k) < 22.5)then
 				direction = v
 				break;
