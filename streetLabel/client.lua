@@ -40,37 +40,37 @@ local direction_offset = {
 local text_offset = 0.290
 
 Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
-		local pos = GetEntityCoords(GetPlayerPed(-1))
-		local var1, var2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.ResultAsInteger(), Citizen.ResultAsInteger())
+  while true do
+  Citizen.Wait(1)
+  local pos = GetEntityCoords(GetPlayerPed(-1))
+  local var1, var2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.ResultAsInteger(), Citizen.ResultAsInteger())
 
-		local var1_name = GetStreetNameFromHashKey(var1)
-		local var2_name = GetStreetNameFromHashKey(var2)
+  local var1_name = GetStreetNameFromHashKey(var1)
+  local var2_name = GetStreetNameFromHashKey(var2)
 
     local zone_name = GetNameOfZone(pos.x, pos.y, pos.z)
-		local current_zone = zones[zone_name]
+  local current_zone = zones[zone_name]
 
-		for k,v in pairs(directions)do
-			direction = GetEntityHeading(GetPlayerPed(-1))
-			if(math.abs(direction - k) < 22.5)then
-				direction = v
-				break;
-			end
-		end
+  for k,v in pairs(directions)do
+  direction = GetEntityHeading(GetPlayerPed(-1))
+  if(math.abs(direction - k) < 22.5)then
+  direction = v
+  break;
+  end
+  end
 
-		if(var1_name and zone_name)then
-			if(zones[zone_name] and tostring(var1_name))then
-        drawTxt(x-0.345, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
-        drawTxt(x-0.310, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
-        drawTxt(x-0.330 + direction_offset[direction], y + 0.42, 1.0, 1.0, 1.0, direction, dir_r, dir_g, dir_b, dir_a)
-        if tostring(var2_name) == "" then
-          drawTxt2(x - text_offset, y + 0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
-        else
-          drawTxt2(x - text_offset, y + 0.45, 1.0,1.0,0.45, tostring(var2_name) .. ", " .. zones[zone_name], str_around_r, str_around_g, str_around_b, str_around_a)
-        end
-        drawTxt2(x - text_offset, y + 0.42, 1.0,1.0,0.55, tostring(var1_name), curr_street_r, curr_street_g, curr_street_b, curr_street_a)
-			end
-		end
-	end
+  if(var1_name and zone_name)then
+  if(zones[zone_name] and tostring(var1_name))then
+    drawTxt(x-0.345, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
+    drawTxt(x-0.310, y+0.66, 1.0,1.5,1.4, " | ", border_r, border_g, border_b, border_a)
+    drawTxt(x-0.330 + direction_offset[direction], y + 0.42, 1.0, 1.0, 1.0, direction, dir_r, dir_g, dir_b, dir_a)
+    if tostring(var2_name) == "" then
+      drawTxt2(x - text_offset, y + 0.45, 1.0,1.0,0.45, current_zone, town_r, town_g, town_b, town_a)
+    else
+      drawTxt2(x - text_offset, y + 0.45, 1.0,1.0,0.45, tostring(var2_name) .. ", " .. zones[zone_name], str_around_r, str_around_g, str_around_b, str_around_a)
+    end
+    drawTxt2(x - text_offset, y + 0.42, 1.0,1.0,0.55, tostring(var1_name), curr_street_r, curr_street_g, curr_street_b, curr_street_a)
+  end
+  end
+  end
 end)
