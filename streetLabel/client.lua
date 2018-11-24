@@ -1,8 +1,3 @@
-local HideHud = false
-AddEventHandler("SOSA:HideHud", function(hidden)
-    HideHud = hidden
-end)
-
 function drawTxt(x,y ,width,height,scale, text, r,g,b,a)
 	if not HideHud then
 		SetTextFont(4)
