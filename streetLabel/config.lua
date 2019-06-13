@@ -35,3 +35,6 @@
 	town_g = 255
 	town_b = 255
 	town_a = 255
+	
+	-- Determine rather the HUD should only display when player(s) are inside a vehicle or not
+	checkForVehicle = true
