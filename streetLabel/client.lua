@@ -30,22 +30,28 @@ function drawTxt2(x,y ,width,height,scale, text, r,g,b,a)
 	end
 end
 
-if (checkForVehicle == false) then 
-	local directions = { [0] = 'N', [45] = 'NW', [90] = 'W', [135] = 'SW', [180] = 'S', [225] = 'SE', [270] = 'E', [315] = 'NE', [360] = 'N', } 
-	Citizen.CreateThread(function()
-		while true do
-			Citizen.Wait(1)
-			local pos = GetEntityCoords(PlayerPedId())
-			local var1, var2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.ResultAsInteger(), Citizen.ResultAsInteger())
-			local current_zone = GetLabelText(GetNameOfZone(pos.x, pos.y, pos.z))
-			for k,v in pairs(directions)do
-				direction = GetEntityHeading(PlayerPedId())
-				if(math.abs(direction - k) < 22.5)then
-					direction = v
-					break
-				end
+local directions = { [0] = 'N', [45] = 'NW', [90] = 'W', [135] = 'SW', [180] = 'S', [225] = 'SE', [270] = 'E', [315] = 'NE', [360] = 'N', } 
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+
+		local ped = GetPlayerPed(-1)
+		local vehicle = GetVehiclePedIsIn(ped, false)
+		local directions = { [0] = 'N', [45] = 'NW', [90] = 'W', [135] = 'SW', [180] = 'S', [225] = 'SE', [270] = 'E', [315] = 'NE', [360] = 'N', } 
+		
+		local pos = GetEntityCoords(PlayerPedId())
+		local var1, var2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.ResultAsInteger(), Citizen.ResultAsInteger())
+		local current_zone = GetLabelText(GetNameOfZone(pos.x, pos.y, pos.z))
+		
+		for k,v in pairs(directions)do
+			direction = GetEntityHeading(PlayerPedId())
+			if(math.abs(direction - k) < 22.5)then
+				direction = v
+				break
 			end
-			
+		end
+
+		if (checkForVehicle == false) then 
 			if GetStreetNameFromHashKey(var1) and GetNameOfZone(pos.x, pos.y, pos.z) then
 				if GetStreetNameFromHashKey(var1) then
 					if direction == 'N' then
@@ -131,30 +137,8 @@ if (checkForVehicle == false) then
 					end
 				end
 			end
-		end
-	end)
-else 	
-	Citizen.CreateThread(function()
-		while true do
-			Citizen.Wait(1)
-
-			local ped = GetPlayerPed()
-			local vehicle = GetVehiclePedIsIn(ped, false)
-			local directions = { [0] = 'N', [45] = 'NW', [90] = 'W', [135] = 'SW', [180] = 'S', [225] = 'SE', [270] = 'E', [315] = 'NE', [360] = 'N', } 
-
-			-- if vehicle exists
-			if vehicle ~= 0 then 
-				local pos = GetEntityCoords(PlayerPedId())
-				local var1, var2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.ResultAsInteger(), Citizen.ResultAsInteger())
-				local current_zone = GetLabelText(GetNameOfZone(pos.x, pos.y, pos.z))
-				for k,v in pairs(directions)do
-					direction = GetEntityHeading(PlayerPedId())
-					if(math.abs(direction - k) < 22.5)then
-						direction = v
-						break
-					end
-				end
-				
+		else 
+			if (vehicle ~= 0) then 
 				if GetStreetNameFromHashKey(var1) and GetNameOfZone(pos.x, pos.y, pos.z) then
 					if GetStreetNameFromHashKey(var1) then
 						if direction == 'N' then
@@ -242,5 +226,5 @@ else
 				end
 			end
 		end
-	end)
-end
+	end
+end)
