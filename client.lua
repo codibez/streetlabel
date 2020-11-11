@@ -8,7 +8,7 @@ local directions = {
   SW = 135,
   W = 90,
   NW = 45,
-  N = 0,
+  --  N = 0, <= will result in the HUD breaking above 315deg
 }
 
 local veh = 0;
@@ -32,7 +32,11 @@ Citizen.CreateThread(function()
 			for k, v in pairs(directions) do
 				if (math.abs(playerDirection - v) < 22.5) then
 					playerDirection = k;
-					break;
+          break;
+        else 
+          -- fallback to N
+          playerDirection = 'N';
+          break;
 				end
 			end
 
