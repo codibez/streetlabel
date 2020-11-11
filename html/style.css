@@ -1,0 +1,46 @@
+/* googleFonts */
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+
+/* General styling */
+* {
+	box-sizing: border-box;
+	font-family: 'Archivo', sans-serif;
+	margin: 0; padding: 0;
+}
+
+#container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	background: rgba(143,164,196,0.45);
+	background: transparent;
+	color: rgb(241, 235, 235);
+	padding: 0 10px;
+	
+	position: absolute;
+	bottom: 17px; left: 17%;
+}
+
+#container > div {
+	flex-flow: flex-col;
+	justify-content: space-between;
+}
+
+/* Customization option(s) */
+#direction {
+	color: rgb(241, 235, 235);
+	font-size: 42px;
+	margin: 0 5px;
+}
+
+#zone {
+	color: rgb(241, 235, 235);
+	font-size: 20px;
+	margin: 0 5px;
+}
+#street {
+	color: rgb(217, 185, 46);
+	font-size: 24px;
+	margin: 0 5px;
+}
