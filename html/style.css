@@ -1,0 +1,50 @@
+* {
+	color: #FFF;
+	font-weight: bold;
+	font-family: Impact, Helvetica, Arial, sans-serif;
+}
+
+table, th, td {
+  border: 0px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+
+#container {
+	color: rgb(241, 235, 235);
+	position: absolute;
+
+	height: 100px;
+	width: 30%;
+
+	transform: translate(-50%, -50%);
+	top: 95%;
+	left: 32%;
+
+	font-size: 46px;
+	
+	text-align: left;
+	text-shadow: 3px 3px #00000080;
+
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: #000000D9;
+}
+
+#direction {
+	color: rgb(241, 235, 235);
+	font-size: 72px;
+}
+
+#zone {
+	color: rgb(241, 235, 235);
+	font-size: 28px;
+}
+
+#street {
+	color: rgb(217, 185, 46);
+	font-size: 32px;
+}
