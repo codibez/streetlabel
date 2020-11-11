@@ -28,19 +28,22 @@
 }
 
 /* Customization option(s) */
+#direction, #zone, #street {
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.45);
+  margin: 0 5px;
+}
+
+/* Customization option(s) */
 #direction {
 	color: rgb(241, 235, 235);
 	font-size: 42px;
-	margin: 0 5px;
 }
 
 #zone {
 	color: rgb(241, 235, 235);
 	font-size: 20px;
-	margin: 0 5px;
 }
 #street {
 	color: rgb(217, 185, 46);
 	font-size: 24px;
-	margin: 0 5px;
 }
