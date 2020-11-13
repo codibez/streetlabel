@@ -5,7 +5,7 @@ config = {
     g = 255;
     b = 255;
     a = 0.65;
-    size = 5;
+    size = 4;
   };
 
   current = {
@@ -13,7 +13,7 @@ config = {
     g = 255;
     b = 255;
     a = 0.9;
-    size = 2.5;
+    size = 1.45;
   };
 
   crossing = {
@@ -29,7 +29,7 @@ config = {
     g = 220;
     b = 80;
     a = 0.9;
-    size = 4;
+    size = 3.5;
   };
 
   position = {
