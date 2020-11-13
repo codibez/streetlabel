@@ -15,7 +15,22 @@ local veh = 0;
 local streetHash1, streetHash2, playerDirection;
 
 Citizen.CreateThread(function()
-	while true do
+
+  -- Wait half a second before sending data NUI message :? 
+  Citizen.Wait(500);
+
+  SendNUIMessage({
+    type = 'data',
+    view = config.view,
+    direction = config.colours.direction,
+    zone = config.colours.current,
+    street = config.colours.crossing,
+    offsetX = config.position.offsetX,
+    offsetY = config.position.offsetY,
+    size = config.position.size
+  });
+
+  while true do
 		local ped = GetPlayerPed(-1);
     local veh = GetVehiclePedIsIn(ped, false);
     
