@@ -45,6 +45,9 @@ function onMessageRecieved(event){
     }
     
     /* HUD position */
+    let container = document.getElementById('container');
+    if (item.offsetX) { container.style.left = item.offsetX + '%' }
+    if (item.offsetY) { container.style.right = item.offsetY + '%' }
     
 		/* view */
 	}
