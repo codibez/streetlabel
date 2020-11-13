@@ -22,6 +22,7 @@ Citizen.CreateThread(function()
   SendNUIMessage({
     type = 'data',
     view = config.view,
+    border = config.border,
     direction = config.colours.direction,
     zone = config.colours.current,
     street = config.colours.crossing,
