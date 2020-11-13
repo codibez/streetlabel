@@ -1,6 +1,6 @@
 -- Variables
 local directions = {
-  N = 360,
+  N = 360, 0,
   NE = 315,
   E = 270,
   SE = 225,
@@ -47,7 +47,13 @@ Citizen.CreateThread(function()
 			
 			for k, v in pairs(directions) do
 				if (math.abs(playerDirection - v) < 22.5) then
-					playerDirection = k;
+          playerDirection = k;
+          
+          if (playerDirection == 1) then
+            playerDirection = 'N';
+            break;
+          end
+
           break;
         else 
           -- fallback to N
