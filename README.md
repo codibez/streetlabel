@@ -14,12 +14,12 @@ streetLabel adds a slick UI on the bottom of your players display showing variou
 
 ### Using Git
 ```
-cd /server-data/resources
+cd server-data/resources/
 git clone https://github.com/lowheartrate/streetLabel
 ```
 
 ### Manually
-- Download the most recent `.zip` file/archive from the **[releases](https://github.com/codibez/streetLabel/releases) page.
+- Download the most recent `.zip` file/archive from the **[releases](https://github.com/codibez/streetLabel/releases)** page.
 - Extract the contents to your `server-data/resources/` directory.
 
 ## Installation
