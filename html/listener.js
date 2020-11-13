@@ -9,7 +9,7 @@ function onMessageRecieved(event){
 			$("#container").hide();
 		} else {
 			$("#container").show();
-			let direction	= `| ${item.direction} |`;
+			let direction	= item.direction;
       let zone = item.zone;
       let street = item.street;
 
@@ -49,6 +49,7 @@ function onMessageRecieved(event){
     if (item.offsetX) { container.style.left = item.offsetX + '%' }
     if (item.offsetY) { container.style.right = item.offsetY + '%' }
     
-		/* view */
+    /* view */
+    
 	}
 }
