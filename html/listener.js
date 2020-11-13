@@ -20,11 +20,14 @@ function onMessageRecieved(event){
   }
   
   if (item && item.type === 'data') {
+    let container = document.getElementById('container');
+    
     /* color customization */
     let border = [item.border.r, item.border.g, item.border.b, item.border.a];
     let borderDOM = document.querySelectorAll('#border');
+    
     let direction = [item.direction.r, item.direction.g, item.direction.b, item.direction.a];
-		let zone = [item.zone.r, item.zone.g, item.zone.b, item.zone.a];
+    let zone = [item.zone.r, item.zone.g, item.zone.b, item.zone.a];
 		let street = [item.street.r, item.street.g, item.street.b, item.street.a];
     
     // jQuery #direction to proper color & font-size configuration
@@ -45,11 +48,9 @@ function onMessageRecieved(event){
     }
     
     /* HUD position */
-    let container = document.getElementById('container');
     if (item.offsetX) { container.style.left = item.offsetX + '%' }
     if (item.offsetY) { container.style.right = item.offsetY + '%' }
     
     /* view */
-    
 	}
 }
