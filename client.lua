@@ -7,7 +7,7 @@ local directions = {
   S = 180,
   SW = 135,
   W = 90,
-  NW = 45,
+  NW = 45
   --  N = 0, <= will result in the HUD breaking above 315deg
 }
 
@@ -23,12 +23,11 @@ Citizen.CreateThread(function()
     type = 'data',
     view = config.view,
     border = config.border,
-    direction = config.colours.direction,
-    zone = config.colours.current,
-    street = config.colours.crossing,
+    direction = config.direction,
+    zone = config.current,
+    street = config.crossing,
     offsetX = config.position.offsetX,
-    offsetY = config.position.offsetY,
-    size = config.position.size
+    offsetY = config.position.offsetY
   });
 
   while true do
@@ -54,10 +53,6 @@ Citizen.CreateThread(function()
             break;
           end
 
-          break;
-        else 
-          -- fallback to N
-          playerDirection = 'N';
           break;
 				end
 			end
