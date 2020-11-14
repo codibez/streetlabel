@@ -16,12 +16,11 @@ local streetHash1, streetHash2, playerDirection;
 
 Citizen.CreateThread(function()
 
-  -- Wait half a second before sending data NUI message :? 
-  Citizen.Wait(500);
+  -- Wait a single second before sending data NUI message :? 
+  Citizen.Wait(1000);
 
   SendNUIMessage({
-    type = 'data',
-    view = config.view,
+    type = 'streetLabel:DATA',
     border = config.border,
     direction = config.direction,
     zone = config.current,
@@ -65,7 +64,7 @@ Citizen.CreateThread(function()
 			end
 
 			SendNUIMessage({
-        type = 'msg',
+        type = 'streetLabel:MSG',
         active = true,
         direction = playerDirection,
         zone = streetHash1,
@@ -73,7 +72,7 @@ Citizen.CreateThread(function()
       });
 		else
 			SendNUIMessage({
-        type = 'msg',
+        type = 'streetLabel:MSG',
         active = false
       });
 		end

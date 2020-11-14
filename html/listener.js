@@ -3,12 +3,14 @@ window.onload = (e) => {
 };
 
 function onMessageRecieved(event){
-	let item = event.data;
-	if (item && item.type === 'msg') {
+  let item = event.data;
+  
+	if (item && item.type === 'streetLabel:MSG') {
 		if (!item.active) {
 			$("#container").hide();
 		} else {
-			$("#container").show();
+      $("#container").show();
+      
 			let direction	= item.direction;
       let zone = item.zone;
       let street = item.street;
@@ -19,7 +21,7 @@ function onMessageRecieved(event){
 		}
   }
   
-  if (item && item.type === 'data') {
+  if (item && item.type === 'streetLabel:DATA') {
     let container = document.getElementById('container');
     
     /* color customization */
@@ -42,14 +44,14 @@ function onMessageRecieved(event){
     $('#zone').css('color', 'rgba('+zone.join(', ')+')');
 		$('#zone').css('font-size', item.zone.size + 'vw');
     
-    for (let i=0; i<borderDOM.length; i++) {
+    for (let i=0; i < borderDOM.length; i++) {
       borderDOM[i].style.color = 'rgba('+border.join(', ')+')';
       borderDOM[i].style.fontSize = item.border.size + 'vw';
     }
     
     /* HUD position */
     if (item.offsetX) { container.style.left = item.offsetX + '%' }
-    if (item.offsetY) { container.style.right = item.offsetY + '%' }
+    if (item.offsetY) { container.style.bottom = item.offsetY + '%' }
     
     /* view */
 	}
