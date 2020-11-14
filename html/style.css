@@ -3,35 +3,35 @@
 
 /* General styling */
 * {
-  box-sizing: border-box;
-  font-family: 'Archivo', sans-serif;
-  margin: 0; padding: 0;
+	box-sizing: border-box;
+	font-family: 'Archivo', sans-serif;
+	margin: 0; padding: 0;
 }
 
 #container {
-  align-items: center;
-  color: rgb(241, 235, 235);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0 10px;
-  position: absolute;
+	align-items: center;
+	color: rgb(241, 235, 235);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 0 10px;
+	position: absolute;
 }
 
 #container > section {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 #container > div {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 }
 
 #direction, #zone, #street {
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.45);
-  margin: 0 5px;
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.45);
+	margin: 0 5px;
 }

@@ -16,23 +16,23 @@ local streetHash1, streetHash2, playerDirection;
 
 Citizen.CreateThread(function()
 
-  -- Wait a single second before sending data NUI message :? 
-  Citizen.Wait(1000);
+	-- Wait a single second before sending data NUI message :? 
+	Citizen.Wait(1000);
 
-  SendNUIMessage({
-    type = 'streetLabel:DATA',
-    border = config.border,
-    direction = config.direction,
-    zone = config.current,
-    street = config.crossing,
-    offsetX = config.position.offsetX,
-    offsetY = config.position.offsetY
-  });
+	SendNUIMessage({
+		type = 'streetLabel:DATA',
+		border = config.border,
+		direction = config.direction,
+		zone = config.current,
+		street = config.crossing,
+		offsetX = config.position.offsetX,
+		offsetY = config.position.offsetY
+	});
 
-  while true do
+	while true do
 		local ped = GetPlayerPed(-1);
-    local veh = GetVehiclePedIsIn(ped, false);
-    
+		local veh = GetVehiclePedIsIn(ped, false);
+
 		local coords = GetEntityCoords(PlayerPedId());
 		local zone = GetNameOfZone(coords.x, coords.y, coords.z);
 		local zoneLabel = GetLabelText(zone);
@@ -45,14 +45,14 @@ Citizen.CreateThread(function()
 			
 			for k, v in pairs(directions) do
 				if (math.abs(playerDirection - v) < 22.5) then
-          playerDirection = k;
-          
-          if (playerDirection == 1) then
-            playerDirection = 'N';
-            break;
-          end
+					playerDirection = k;
+		  
+					if (playerDirection == 1) then
+						playerDirection = 'N';
+						break;
+					end
 
-          break;
+					break;
 				end
 			end
 
@@ -64,19 +64,19 @@ Citizen.CreateThread(function()
 			end
 
 			SendNUIMessage({
-        type = 'streetLabel:MSG',
-        active = true,
-        direction = playerDirection,
-        zone = streetHash1,
-        street = street2
-      });
+				type = 'streetLabel:MSG',
+				active = true,
+				direction = playerDirection,
+				zone = streetHash1,
+				street = street2
+			});
 		else
 			SendNUIMessage({
-        type = 'streetLabel:MSG',
-        active = false
-      });
+				type = 'streetLabel:MSG',
+				active = false
+			});
 		end
 		-- Wait for half a second.
 		Citizen.Wait(500);
-  end
+	end
 end)
