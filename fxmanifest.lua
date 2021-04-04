@@ -8,7 +8,7 @@ version '1.1.0'
 
 -- Client Scripts
 client_scripts {
-	'config.lua',
+	'configuration.lua',
 	'client.lua'
 }
 
@@ -17,5 +17,7 @@ ui_page('html/index.html')
 files({
 	'html/index.html',
 	'html/listener.js',
-	'html/style.css'
+	'html/styles.css',
+  'html/font-face.css',
+  'html/dynamic.css'
 })

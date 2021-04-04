@@ -12,7 +12,7 @@ local directions = {
 }
 
 local veh = 0;
-local streetHash1, streetHash2, playerDirection;
+local hash1, hash2, heading;
 
 Citizen.CreateThread(function()
 
@@ -21,12 +21,11 @@ Citizen.CreateThread(function()
 
 	SendNUIMessage({
 		type = 'streetLabel:DATA',
-		border = config.border,
-		direction = config.direction,
-		zone = config.current,
-		street = config.crossing,
+    color = config.color,
 		offsetX = config.position.offsetX,
-		offsetY = config.position.offsetY
+		offsetY = config.position.offsetY,
+    scale = config.scale,
+    dynamic = config.dynamic
 	});
 
 	while true do
@@ -37,18 +36,18 @@ Citizen.CreateThread(function()
 		local zone = GetNameOfZone(coords.x, coords.y, coords.z);
 		local zoneLabel = GetLabelText(zone);
 
-		if(checkForVehicle == false or veh ~= 0) then 
+		if(config.vehicleCheck == false or veh ~= 0) then 
 			local var1, var2 = GetStreetNameAtCoord(coords.x, coords.y, coords.z, Citizen.ResultAsInteger(), Citizen.ResultAsInteger())
-			streetHash1 = GetStreetNameFromHashKey(var1);
-			streetHash2 = GetStreetNameFromHashKey(var2);
-			playerDirection = GetEntityHeading(PlayerPedId());
+			hash1 = GetStreetNameFromHashKey(var1);
+			hash2 = GetStreetNameFromHashKey(var2);
+			heading = GetEntityHeading(PlayerPedId());
 			
 			for k, v in pairs(directions) do
-				if (math.abs(playerDirection - v) < 22.5) then
-					playerDirection = k;
+				if (math.abs(heading - v) < 22.5) then
+					heading = k;
 		  
-					if (playerDirection == 1) then
-						playerDirection = 'N';
+					if (heading == 1) then
+						heading = 'N';
 						break;
 					end
 
@@ -56,19 +55,19 @@ Citizen.CreateThread(function()
 				end
 			end
 
-			local street2 = '';
-			if (streetHash2 == '') then
+			local street2;
+			if (hash2 == '') then
 				street2 = zoneLabel;
 			else
-				street2 = streetHash2..', '..zoneLabel;
+				street2 = hash2..', '..zoneLabel;
 			end
 
 			SendNUIMessage({
 				type = 'streetLabel:MSG',
 				active = true,
-				direction = playerDirection,
-				zone = streetHash1,
-				street = street2
+				direction = heading,
+				street = hash1,
+				zone = street2
 			});
 		else
 			SendNUIMessage({
@@ -76,7 +75,9 @@ Citizen.CreateThread(function()
 				active = false
 			});
 		end
+		
 		-- Wait for half a second.
 		Citizen.Wait(500);
+		
 	end
 end)
