@@ -1,0 +1,63 @@
+* { box-sizing: border-box; }
+body {
+  background: transparent;
+  height: 100vh; width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+div#container {
+  position: absolute;
+
+  /* CSS Flexbox */
+  display: flex;
+  align-items: center;
+}
+
+section#compass {
+  font-size: 64px;
+
+  /* CSS Flexbox */
+  display: flex;
+  align-items: center;
+}
+span.border {
+  color: rgba(255,255,255,.39);
+  transform: scaleY(1.25);
+  transform: scale(1.4);
+
+  -webkit-text-stroke: 1px rgba(0,0,0,.39);
+  -webkit-text-fill-color: rgba(255,255,255,.39);
+}
+span.border:first-child { margin-right: 5px; }
+span.border:last-child { margin-left: 5px; }
+
+span#direction {
+  color: rgb(255,255,255);
+  text-shadow: 1px 1px 2px rgba(0,0,0,.85);
+
+  -webkit-text-stroke: 1px rgba(0,0,0,.85);
+  -webkit-text-fill-color: rgb(255,255,255);
+}
+
+section#vicinity {
+  font-size: 36px;
+  margin: auto 8px;
+
+  /* CSS Flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+span#zone {
+  color: rgb(255,255,255);
+  font-size: 26px;
+  margin: 0; padding: 0;
+  text-shadow: 2px 2px 3px rgb(0,0,0);
+
+  -webkit-text-fill-color: rgb(255,255,255);
+}
+span#street {
+  margin: 0; padding: 0;
+  text-shadow: 2px 2px 3px rgb(0,0,0);
+}
+
