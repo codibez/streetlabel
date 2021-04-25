@@ -1,8 +1,8 @@
 window.onload = (e) => {
-  window.addEventListener('message', onMessageRecieved);
+  window.addEventListener('message', onMessageReceived);
 };
 
-function onMessageRecieved(event){
+function onMessageReceived(event){
 	let item = event.data;
   
 	if (item && item.type === 'streetLabel:MSG') {
