@@ -1,63 +1,92 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+
 body {
   background: transparent;
-  height: 100vh; width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   overflow: hidden;
   position: relative;
 }
-div#container {
+
+div.compass {
+  font-size: 48px;
+
+  /* CSS Flexbox */
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
   position: absolute;
-
-  /* CSS Flexbox */
-  display: flex;
-  align-items: center;
+  bottom: 3%;
+  left: 17.55%;
 }
 
-section#compass {
-  font-size: 64px;
-
-  /* CSS Flexbox */
-  display: flex;
+div.direction {
   align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  margin-right: 10px;
 }
+
 span.border {
-  color: rgba(255,255,255,.39);
-  transform: scaleY(1.25);
-  transform: scale(1.4);
+  color: rgba(255,255,255,1);
+  display: inline-block;
+  transform: scale(1.1, 1.5);
+  opacity: 0.39;
 
-  -webkit-text-stroke: 1px rgba(0,0,0,.39);
-  -webkit-text-fill-color: rgba(255,255,255,.39);
+  /* stroke effect */
+  text-shadow:
+    -1px -1px 0 #000,
+    0 -1px 0 #000,
+    1px -1px 0 #000,
+    1px 0 0 #000,
+    1px 1px 0 #000,
+    0 1px 0 #000,
+    -1px 1px 0 #000,
+    -1px 0 0 #000;
 }
-span.border:first-child { margin-right: 5px; }
-span.border:last-child { margin-left: 5px; }
 
-span#direction {
+span.direction {
   color: rgb(255,255,255);
-  text-shadow: 1px 1px 2px rgba(0,0,0,.85);
-
-  -webkit-text-stroke: 1px rgba(0,0,0,.85);
-  -webkit-text-fill-color: rgb(255,255,255);
+  margin: 0 7px;
 }
 
-section#vicinity {
-  font-size: 36px;
-  margin: auto 8px;
+div.vicinity {
+  color: rgb(255,255,255);
+  font-size: 28px;
 
   /* CSS Flexbox */
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-span#zone {
-  color: rgb(255,255,255);
-  font-size: 26px;
-  margin: 0; padding: 0;
-  text-shadow: 2px 2px 3px rgb(0,0,0);
 
-  -webkit-text-fill-color: rgb(255,255,255);
+/*
+span.street {
+  color: rgb(240, 200, 80);
 }
-span#street {
-  margin: 0; padding: 0;
-  text-shadow: 2px 2px 3px rgb(0,0,0);
+*/
+
+span.zone {
+  font-size: 24px;
+  position: relative;
+  top: -3px;
 }
 
+.shadow-stroke {
+	text-shadow:
+    -1px -1px 0 #000,
+     0   -1px 0 #000,
+     1px -1px 0 #000,
+     1px  0   0 #000,
+     1px  1px 0 #000,
+     0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000,
+		2px 3px 2px rgba(0,0,0,0.75);
+}
