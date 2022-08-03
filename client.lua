@@ -45,10 +45,18 @@ Citizen.CreateThread(function()
       street2 = hash2..', '..GetLabelText(zone);
     end
 
+    local configColor;
+    if (config.color) then
+      configColor = 'rgb('..config.color.r..', '..config.color.g..', '..config.color.b..')'
+    else
+      configColor = 'rgb(240,200,80)'
+    end
+
     if (config.vehicleCheck == false) then
 			SendNUIMessage({
 				type = 'open',
 				active = true,
+        color = configColor,
 				direction = heading,
 				street = hash1,
 				zone = street2
@@ -58,6 +66,7 @@ Citizen.CreateThread(function()
         SendNUIMessage({
           type = 'open',
           active = true,
+          color = configColor,
           direction = heading,
           street = hash1,
           zone = street2
