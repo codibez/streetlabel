@@ -20,8 +20,11 @@ div.compass {
   flex-direction: row;
 
   position: absolute;
+  
+  /*
   bottom: 3%;
   left: 17.55%;
+  */
 }
 
 div.direction {
