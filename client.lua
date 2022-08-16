@@ -52,12 +52,17 @@ Citizen.CreateThread(function()
       configColor = 'rgb(240,200,80)'
     end
 
+    if (config.position.x == nil or config.position.x == '') then config.position.x = 17.55 end
+    if (config.position.y == nil or config.position.y == '') then config.position.y = 3 end
+
     if (config.vehicleCheck == false) then
 			SendNUIMessage({
 				type = 'open',
 				active = true,
         color = configColor,
 				direction = heading,
+        positionX = config.position.x,
+        positionY = config.position.y,
 				street = hash1,
 				zone = street2
 			})
@@ -68,6 +73,8 @@ Citizen.CreateThread(function()
           active = true,
           color = configColor,
           direction = heading,
+          positionX = config.position.x,
+          positionY = config.position.y,
           street = hash1,
           zone = street2
         })
@@ -79,6 +86,6 @@ Citizen.CreateThread(function()
       end
 		end
 		
-		Citizen.Wait(1000); -- 1s delay
+		Citizen.Wait(500); -- 1s delay
 	end
 end)
