@@ -1,3 +1,13 @@
-@import url(//db.onlinewebfonts.com/c/4d8cc347ebb06fcad10b4ca2aa8ad235?family=ChaletComprime-CologneSixty);
-@font-face {font-family: "ChaletComprime-CologneSixty"; src: url("//db.onlinewebfonts.com/t/4d8cc347ebb06fcad10b4ca2aa8ad235.eot"); src: url("//db.onlinewebfonts.com/t/4d8cc347ebb06fcad10b4ca2aa8ad235.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4d8cc347ebb06fcad10b4ca2aa8ad235.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4d8cc347ebb06fcad10b4ca2aa8ad235.woff") format("woff"), url("//db.onlinewebfonts.com/t/4d8cc347ebb06fcad10b4ca2aa8ad235.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4d8cc347ebb06fcad10b4ca2aa8ad235.svg#ChaletComprime-CologneSixty") format("svg"); }
-body { font-family: 'ChaletComprime-CologneSixty', sans-serif; }
+@font-face {
+	font-family: "ChaletComprime-CologneSixty";
+	src: local('Chalet Comprime Cologne Sixty'), local('Chalet-Comprime-Cologne-Sixty'),
+	url('./fonts/ChaletComprime-CologneSixty.woff2') format('woff2'),
+	url('./fonts/ChaletComprime-CologneSixty.woff') format('woff'),
+	url('./fonts/ChaletComprime-CologneSixty.ttf') format('truetype');
+}
+
+body {
+	font-family: 'ChaletComprime-CologneSixty';
+	font-style: normal;
+	font-weight: normal;
+}
