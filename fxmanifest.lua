@@ -4,7 +4,7 @@ games { 'gta5' }
 
 author 'lowheartrate'
 description 'Street Label by lowheartrate'
-version '1.1.3'
+version '1.2.0'
 
 -- Client Scripts
 client_scripts {
@@ -16,7 +16,8 @@ ui_page('html/index.html')
 
 files({
 	'html/index.html',
-	'html/styles.css',
-  'html/font-face.css',
+	'html/css/styles.css',
+	'html/css/font-face.css',
+	'html/fonts/*',
 	'html/listener.js',
 })
