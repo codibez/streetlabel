@@ -7,8 +7,8 @@ window.addEventListener('message', (event) => {
 		} else {
 			$('.compass').show();
 
-			$('.compass').css('left', item.positionX + '%');
-			$('.compass').css('bottom', item.positionY + '%');
+			$('.compass').css('left', item.posX + '%');
+			$('.compass').css('bottom', item.posY + '%');
 
 			$('span.direction').text(item.direction);
 			$('span.street').text(item.street);

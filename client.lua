@@ -61,8 +61,8 @@ Citizen.CreateThread(function()
 				active = true,
         color = configColor,
 				direction = heading,
-        positionX = config.position.x,
-        positionY = config.position.y,
+        posX = config.position.x,
+        posY = config.position.y,
 				street = hash1,
 				zone = street2
 			})
@@ -73,8 +73,8 @@ Citizen.CreateThread(function()
           active = true,
           color = configColor,
           direction = heading,
-          positionX = config.position.x,
-          positionY = config.position.y,
+          posX = config.position.x,
+          posY = config.position.y,
           street = hash1,
           zone = street2
         })
