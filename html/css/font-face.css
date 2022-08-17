@@ -1,9 +1,9 @@
 @font-face {
 	font-family: "ChaletComprime-CologneSixty";
 	src: local('Chalet Comprime Cologne Sixty'), local('Chalet-Comprime-Cologne-Sixty'),
-	url('./fonts/ChaletComprime-CologneSixty.woff2') format('woff2'),
-	url('./fonts/ChaletComprime-CologneSixty.woff') format('woff'),
-	url('./fonts/ChaletComprime-CologneSixty.ttf') format('truetype');
+	url('../fonts/ChaletComprime-CologneSixty.woff2') format('woff2'),
+	url('../fonts/ChaletComprime-CologneSixty.woff') format('woff'),
+	url('../fonts/ChaletComprime-CologneSixty.ttf') format('truetype');
 }
 
 body {
