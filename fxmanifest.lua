@@ -18,6 +18,8 @@ files({
 	'html/index.html',
 	'html/css/styles.css',
 	'html/css/font-face.css',
-	'html/fonts/*',
-	'html/listener.js',
+	'html/fonts/*.woff2',
+	'html/fonts/*.woff',
+	'html/fonts/*.ttf',
+	'html/js/listener.js',
 })
