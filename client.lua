@@ -16,6 +16,7 @@ Citizen.CreateThread(function()
 	while true do
 		local ped = GetPlayerPed(-1);
 		local veh = GetVehiclePedIsIn(ped, false);
+    local pause = IsPauseMenuActive()
 
 		local coords = GetEntityCoords(ped);
 		local zone = GetNameOfZone(coords.x, coords.y, coords.z);
@@ -24,11 +25,11 @@ Citizen.CreateThread(function()
     local hash1 = GetStreetNameFromHashKey(var1);
 		local hash2 = GetStreetNameFromHashKey(var2);
 		local heading = GetEntityHeading(PlayerPedId());
-			
+
     for k, v in pairs(directions) do
       if (math.abs(heading - v) < 22.5) then
         heading = k;
-    
+
         if (heading == 1) then
           heading = 'N';
           break;
@@ -66,6 +67,11 @@ Citizen.CreateThread(function()
 				street = hash1,
 				zone = street2
 			})
+    elseif pause then
+      SendNUIMessage({
+        type = 'open',
+        active = false
+      })
 		else
 			if (veh ~= 0) then
         SendNUIMessage({
@@ -78,14 +84,10 @@ Citizen.CreateThread(function()
           street = hash1,
           zone = street2
         })
-      else
-        SendNUIMessage({
-          type = 'open',
-          active = false
-        })
+
       end
 		end
-		
+
 		Citizen.Wait(500); -- 1s delay
 	end
 end)
